@@ -5,7 +5,9 @@ const Weather = ({ weather: { details } }) => {
 
   return (
     <div>
-      <div className={`${mainFlex}`}>{details}</div>
+      <div className={`${mainFlex}`}>
+        <p className="text-3xl text-white italic ">{details}</p>
+      </div>
     </div>
   );
 };

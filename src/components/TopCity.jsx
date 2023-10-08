@@ -1,6 +1,6 @@
 import React from "react";
 
-const TopButton = ({ setQuery }) => {
+const TopCity = ({ setQuery }) => {
   const cities = [
     {
       id: 1,
@@ -16,11 +16,11 @@ const TopButton = ({ setQuery }) => {
     },
     {
       id: 4,
-      name: "Hawassa",
+      name: "Awasa",
     },
     {
       id: 5,
-      name: "Afar",
+      name: "Gonder",
     },
   ];
 
@@ -42,4 +42,4 @@ const TopButton = ({ setQuery }) => {
   );
 };
 
-export default TopButton;
+export default TopCity;

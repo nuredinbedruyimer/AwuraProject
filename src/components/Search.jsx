@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import { UilSearch, UilMapMarker } from "@iconscout/react-unicons";
 import Converter from "./Converter";
+import { style } from "./style/style";
 
 const Search = ({ setQuery, units, setUnit }) => {
+  const [cityName, setCityName] = useState("");
+  // handle Our Current  Location
   const handleLocation = () => {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition((position) => {
@@ -15,16 +18,14 @@ const Search = ({ setQuery, units, setUnit }) => {
       });
     }
   };
+
+  // Search By Using City Name
   const handleCitySearch = () => {
     if (cityName !== "") {
       setQuery({ q: cityName });
     }
   };
-  const [cityName, setCityName] = useState("");
-  console.log("City Name :", cityName);
-  console.log(units);
 
-  const animation = "transition ease-out hover:scale-110";
   return (
     <div className="flex flex-row justify-center items-center my-6">
       <div className="flex flex-row w-3/4 justify-center items-center space-x-4 absolute ">
@@ -38,14 +39,14 @@ const Search = ({ setQuery, units, setUnit }) => {
         <UilSearch
           size={25}
           color="black"
-          className={`relative top-0 right-12 cursor-pointer ${animation}`}
+          className={`relative top-0 right-12 cursor-pointer ${style.animation}`}
           onClick={handleCitySearch}
         />
 
         <UilMapMarker
           size={25}
           color="white"
-          className={`relative top-0 right-6 cursor-pointer ${animation}`}
+          className={`relative top-0 right-6 cursor-pointer ${style.animation}`}
           onClick={handleLocation}
         />
         <Converter units={units} setUnit={setUnit} />

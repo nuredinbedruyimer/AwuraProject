@@ -1,10 +1,10 @@
 import React from "react";
-import { iconUrl } from "../services/weatherService";
+import { iconUrl, toLocalTime } from "../../services/weatherService";
 import { UilSun, UilWind, UilTear } from "@iconscout/react-unicons";
 
-const Singleforcast = ({ data }) => {
+const Singleforcast = ({ data, timezone }) => {
   const {
-    dt_txt,
+    dt,
     main: { temp, temp_max, temp_min, humidity },
     weather,
     wind: { speed },
@@ -12,9 +12,9 @@ const Singleforcast = ({ data }) => {
   const iconurl = iconUrl(weather[0].icon);
 
   return (
-    <div className="flex justify-between w-full items-center flex-row  gap-4  border border-sky-300 p-8 rounded-xl shadow-2xl mt-8">
+    <div className="flex justify-between w-full items-center   gap-4  border border-sky-300 p-8 rounded-xl shadow-2xl mt-8">
       <div className="border border-orange-400 p-6 rounded-r-2xl">
-        <p className=""> {dt_txt}</p>
+        <p className=""> {toLocalTime(dt, timezone, "hh:mm a")}</p>
 
         <img src={iconurl} alt="" className="w-16 h-16 rounded-full" />
         <p className="font-medium ">{weather[0].description}</p>
