@@ -18,14 +18,10 @@ const TopCity = ({ setQuery }) => {
       id: 4,
       name: "Awasa",
     },
-    {
-      id: 5,
-      name: "Gonder",
-    },
   ];
 
   return (
-    <div className=" flex justify-center items-center gap-8 mb-12">
+    <div className=" flex flx-c justify-center items-center gap-8 mb-12">
       {cities.map((city) => {
         return (
           <div className="text-white" key={city.id}>

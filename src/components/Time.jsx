@@ -7,7 +7,7 @@ const Time = ({ weather: { dt, timezone } }) => {
   console.log(timezone);
 
   return (
-    <div className={` mt-4 ${style.mainFlex}`}>
+    <div className={`  ${style.mainFlex}`}>
       <p className="text-xl font-extralight  uppercase ">{localTime}</p>
     </div>
   );

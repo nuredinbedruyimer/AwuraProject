@@ -27,12 +27,12 @@ const Search = ({ setQuery, units, setUnit }) => {
   };
 
   return (
-    <div className="flex flex-row justify-center items-center my-6">
-      <div className="flex flex-row w-3/4 justify-center items-center space-x-4 absolute ">
+    <div className="md:w-full flex gap-4 md:flex-row flex-col justify-center items-center md:my-6 my-2">
+      <div className="flex md:flex-row   justify-center items-center space-x-4 ">
         <input
           type="text"
           placeholder="Search Here..."
-          className="w-1/3 py-1 focus:outline-none text-orange-500 pl-2 shadow-md rounded-lg border border-sky-300"
+          className=" py-1 focus:outline-none text-orange-500 pl-2 shadow-md rounded-lg border border-sky-300"
           onChange={(e) => setCityName(e.target.value)}
         />
 
@@ -49,8 +49,8 @@ const Search = ({ setQuery, units, setUnit }) => {
           className={`relative top-0 right-6 cursor-pointer ${style.animation}`}
           onClick={handleLocation}
         />
-        <Converter units={units} setUnit={setUnit} />
       </div>
+      <Converter units={units} setUnit={setUnit} />
     </div>
   );
 };

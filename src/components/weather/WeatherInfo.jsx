@@ -18,6 +18,7 @@ const WeatherInfo = ({
     timezone,
   },
 }) => {
+  //  To pass for weather card
   const someDetails = {
     humidity: humidity,
     speed: speed,
